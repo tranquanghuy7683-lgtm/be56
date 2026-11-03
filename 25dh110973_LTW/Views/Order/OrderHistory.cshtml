@@ -1,0 +1,2 @@
+﻿@model IEnumerable<_25dh110973_LTW.Models.Order>
+@{ViewBag.Title="Lịch sử mua hàng";Layout="~/Views/Shared/_CustomerLayout.cshtml";}<h2>Lịch sử mua hàng</h2><table class="table table-bordered"><tr><th>Mã đơn</th><th>Ngày</th><th>Tổng tiền</th><th>Thanh toán</th><th></th></tr>@foreach(var o in Model){<tr><td>#@o.OrderID</td><td>@o.OrderDate.ToString("dd/MM/yyyy HH:mm")</td><td>@o.TotalAmount.ToString("N0") đ</td><td>@o.PaymentStatus</td><td><a href="@Url.Action("Details",new{id=o.OrderID})">Chi tiết</a></td></tr>}</table>

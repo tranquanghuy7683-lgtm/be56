@@ -1,0 +1,2 @@
+﻿@model _25dh110973_LTW.Models.Order
+@{ViewBag.Title="Đặt hàng thành công";Layout="~/Views/Shared/_CustomerLayout.cshtml";}<h2>Đặt hàng thành công!</h2><p>Mã đơn hàng: <strong>#@Model.OrderID</strong></p><p>Tổng tiền: @Model.TotalAmount.ToString("N0") đ</p><p>Trạng thái: @Model.PaymentStatus</p><a href="@Url.Action("OrderHistory")">Xem lịch sử mua hàng</a>

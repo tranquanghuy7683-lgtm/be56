@@ -1,0 +1,3 @@
+﻿@model PagedList.IPagedList<_25dh110973_LTW.Models.Product>
+@using PagedList.Mvc
+@{ViewBag.Title="Danh sách sản phẩm";Layout="~/Views/Shared/_CustomerLayout.cshtml";}<h2>Sản phẩm theo danh mục</h2>@using(Html.BeginForm("ProductList","Home",FormMethod.Get)){<input type="hidden" name="id" value="@ViewBag.CategoryID"/><select name="sort" class="form-control" style="max-width:220px;display:inline"><option value="">Mặc định</option><option value="price_asc">Giá tăng dần</option><option value="price_desc">Giá giảm dần</option></select><button class="btn btn-default">Sắp xếp</button>}@Html.Partial("~/Views/Shared/_ProductCards.cshtml",Model)@Html.PagedListPager(Model,p=>Url.Action("ProductList",new{id=ViewBag.CategoryID,page=p,sort=ViewBag.Sort}))

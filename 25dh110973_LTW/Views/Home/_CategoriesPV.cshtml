@@ -1,0 +1,2 @@
+﻿@model IEnumerable<_25dh110973_LTW.Models.Category>
+<li><a href="@Url.Action("ProductList","Home")">Tất cả sản phẩm</a></li>@foreach(var c in Model){<li><a href="@Url.Action("ProductList","Home",new{id=c.CategoryID})">@c.CategoryName</a></li>}

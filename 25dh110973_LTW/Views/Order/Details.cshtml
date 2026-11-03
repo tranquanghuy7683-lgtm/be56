@@ -1,0 +1,2 @@
+﻿@model _25dh110973_LTW.Models.Order
+@{ViewBag.Title="Chi tiết đơn hàng";Layout="~/Views/Shared/_CustomerLayout.cshtml";}<h2>Đơn hàng #@Model.OrderID</h2><p>Ngày đặt: @Model.OrderDate.ToString("dd/MM/yyyy")</p><p>Giao đến: @Model.AddressDelivery</p><table class="table table-bordered"><tr><th>Sản phẩm</th><th>Số lượng</th><th>Đơn giá</th></tr>@foreach(var d in Model.OrderDetails){<tr><td>@d.Product.ProductName</td><td>@d.Quantity</td><td>@d.UnitPrice.ToString("N0") đ</td></tr>}</table><h3>Tổng: @Model.TotalAmount.ToString("N0") đ</h3>

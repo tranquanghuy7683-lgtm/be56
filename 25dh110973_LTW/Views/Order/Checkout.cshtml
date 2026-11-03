@@ -1,0 +1,2 @@
+﻿@model List<_25dh110973_LTW.Models.ViewModel.CartItem>
+@{ViewBag.Title="Đặt hàng";Layout="~/Views/Shared/_CustomerLayout.cshtml";}<h2>Thanh toán khi nhận hàng</h2><p>Tổng tiền: <strong>@Model.Sum(x=>x.Total).ToString("N0") đ</strong></p>@using(Html.BeginForm()){@Html.AntiForgeryToken()@Html.ValidationSummary(false,"",new{@class="text-danger"})<label>Địa chỉ giao hàng</label><textarea name="address" class="form-control" required rows="3">@ViewBag.Address</textarea><br/><button class="btn btn-success">Xác nhận đặt hàng</button>}
